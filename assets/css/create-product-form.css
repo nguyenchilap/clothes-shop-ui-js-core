@@ -19,3 +19,7 @@ ul.product-size-list {
     padding-left: 8px;
     margin-right: 8px;
 }
+
+.createProductForm__categories ul li{
+    font-size: 1.4rem;
+}

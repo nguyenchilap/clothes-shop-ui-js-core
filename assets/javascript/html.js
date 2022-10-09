@@ -14,7 +14,7 @@ const HTML = {
                     <li><div class="dropdown-item">${category.name}</div></li>
                     `,
         
-    
+        
     }
 }
 
