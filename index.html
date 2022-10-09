@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apricot</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/create-product-form.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script src="./assets/javascript/env.js"></script>
+    <script src="./assets/javascript/html.js"></script>
+    <script src="./assets/javascript/global-valriables.js"></script>
+    <script src="./assets/javascript/handle-api.js"></script>
+    <script src="./assets/javascript/utils.js"></script>
+
+    <div id="main">
+
+        <!-- HEADER -->
+        <div id="header">
+            <h1 class="header__title"></h1>
+            <button class="header_switch-btn btn btn-light btn-custom-medium">Đổi shop</button>
+        </div>   
+        <!-- HEADER -->
+
+        <!-- Create Product -->
+        <div id="create-product-form" class="container mt-5">
+
+            <!-- CREATE PRODUCT FORM -->
+            <div class="createProductForm">
+
+                <div class="createProductForm__title mb-5">
+                    <h1>Tạo sản phẩm</h1>
+                </div>
+                
+                <div class="mb-3 createProductForm__name">
+                    <label for="product-name">Tên sản phẩm</label>
+                    <input type="text" class="form-control" name="name" id="product-name" placeholder="Áo khoác...">
+                </div>
+
+                <div class="mb-3 createProductForm__sku">
+                    <label for="product-sku">Mã sản phẩm</label>
+                    <input type="text" class="form-control" name="sku" id="product-sku" placeholder="AOKHOAC123...">
+                </div>
+
+                <div class="mb-3 createProductForm__description">
+                    <label for="product-description">Mô tả</label>
+                    <input type="text" class="form-control" name="description" id="product-description" placeholder="Áo mặc mùa thu...">
+                </div>
+
+                <div class="dropdown createProductForm__categories">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Danh mục sản phẩm
+                    </button>
+                    <ul class="dropdown-menu">
+                      
+                    </ul>
+                </div>
+
+                <div class="mb-3 createProductForm__size">
+                    <label for="product-size">Kích thước (Size)</label>
+                    <form class="d-flex">
+                        <input type="text" class="form-control" name="size" id="product-size" placeholder="S (140-150cm, 45-50kg)">
+                        <button class="btn btn-dark btn-custom-small" id="add-size-btn">Thêm</button>
+                    </form>
+                    <ul class="product-size-list mt-3">
+
+                    </ul>
+                </div>
+
+                <div class="mb-4 createProductForm__unit">
+                    <label for="product-unit">Đơn vị sản phẩm</label>
+                    <select class="form-select" id="product-unit" style="padding: 4px 8px;">
+                        <option value="1">Cái</option>
+                        <option value="2">Bộ</option>
+                        <option value="3">Chiếc</option>
+                        <option value="4">Đôi</option>
+                        <option value="5">Hộp</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 d-flex justify-content-between">
+                    <div class="createProductForm__import-price">
+                        <label for="product-import-price">Giá nhập</label>
+                        <input type="text" class="form-control" name="import_price" id="product-import-price" placeholder="100000">
+                    </div>
+
+                    <div class="createProductForm__export-price">
+                        <label for="product-export-price">Giá bán</label>
+                        <input type="text" class="form-control" name="export_price" id="product-export-price" placeholder="150000">
+                    </div>
+
+                    <div class="createProductForm__special-price">
+                        <label for="product-special-price">Giá bán</label>
+                        <input type="text" class="form-control" name="special_price" id="product-special-price" placeholder="130000">
+                    </div>
+                </div>
+
+            </div>
+            <!-- CREATE PRODUCT FORM -->
+
+        </div>
+        <!-- CONTENT -->
+
+        <div id="footer">
+        </div>
+    </div>
+
+
+    <script src="./assets/javascript/header.js"></script>
+    <script src="./assets/javascript/create-product-form.js"></script>
+    <script src="./assets/javascript/main.js"></script>
+</body>
+</html>

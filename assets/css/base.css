@@ -1,0 +1,42 @@
+:root{
+    --primary-color: #171010;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+    --button-hover-color: #b4846c;
+    --text-hover-color: #911F27;
+    --facebook-color: #3b5998;
+    --success-color: #28a745;
+    --topic-img-height: 400px;
+    --love-color: #e31b23;
+    --angry-color: #c92929;
+
+    --header-height: 60px;
+}
+
+/* Reset Css */
+*{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+/* BUTTON */
+.btn-custom-small {
+    font-size: 1.4rem;
+    padding: 6px 10px;
+}
+
+.btn-custom-medium {
+    font-size: 1.6rem;
+    padding: 8px 12px;
+}

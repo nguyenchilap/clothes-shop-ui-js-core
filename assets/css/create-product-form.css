@@ -1,0 +1,21 @@
+#create-product-form {
+    font-size: 1.6rem;
+}
+
+.createProductForm input {
+    padding: 20px 16px;
+    font-size: 1.4rem;
+}
+
+ul.product-size-list {
+    list-style: none;
+    display: flex;
+}
+
+.product-size-item {
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    padding-left: 8px;
+    margin-right: 8px;
+}
