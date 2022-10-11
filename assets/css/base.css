@@ -61,3 +61,9 @@ html{
 .dropdown-menu > li:hover > .dropdown-submenu {
     display: block;
 }
+
+/* PAGINATION */
+
+.pagination li a {
+    font-size: 1.4rem;
+}
