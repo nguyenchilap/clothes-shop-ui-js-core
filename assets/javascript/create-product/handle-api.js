@@ -37,7 +37,7 @@ const ajaxGetImagesUrl = (inputName) => {
 }
 
 const ajaxCreateProduct = (product) => {
-    const url = global.url.localHostname + global.url.products.all;
+    const url = global.url.hostname + global.url.products.all;
     const token = window.localStorage.getItem('apricot_token');
     console.log(product);
     if (token) {
