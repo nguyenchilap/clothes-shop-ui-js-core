@@ -9,3 +9,10 @@
     color: var(--white-color);
     margin-top: 4px;
 }
+
+.navigate {
+    text-decoration: none;
+    color: var(--white-color);
+    margin-left: 20px;
+    font-size: 1.4rem;
+}

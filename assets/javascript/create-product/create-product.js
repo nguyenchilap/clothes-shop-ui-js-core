@@ -209,6 +209,23 @@
 
     //===================================================================
 
+    //Header==========================================================
+    const handleSwitchShopBtn = () => {
+        jquerySelector(".header_switch-btn").click(() =>{
+            if (global.shop === ENV.SHOP.APRICOT) {
+                global.shop = ENV.SHOP.BEIGE;
+            } else {
+                global.shop = ENV.SHOP.APRICOT;
+            }
+            setShopSession();
+        }); 
+    }
+
+    const setShopSession = () => {
+        document.title = global.shop.TEXT;
+        jquerySelector('.header__title').html(global.shop.TEXT);
+    }
+    //=================================================================
 
     const handleActions = () => {
         handleAddSizeFormSubmit();
@@ -216,9 +233,11 @@
         handleUploadImage();
         handleUploadImages();
         handleCreateProductBtn();
+        handleSwitchShopBtn();
     }
 
     const init = () => {
+       setShopSession();
        renderRootCategories();
     }
 

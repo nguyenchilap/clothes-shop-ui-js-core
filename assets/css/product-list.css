@@ -1,0 +1,8 @@
+#item-per-page {
+    padding: 8px;
+    font-size: 1.2rem;
+}
+
+#item-per-page option {
+    font-size: 1.2rem;
+}
