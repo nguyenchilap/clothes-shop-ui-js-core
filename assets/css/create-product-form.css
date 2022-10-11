@@ -7,7 +7,8 @@
     font-size: 1.4rem;
 }
 
-ul.product-size-list {
+ul.product-size-list,
+ul.product-color-list {
     list-style: none;
     display: flex;
 }

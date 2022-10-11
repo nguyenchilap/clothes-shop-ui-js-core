@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apricot</title>
+    <title>Tạo sản phẩm</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -47,31 +47,45 @@
                     <h1>Tạo sản phẩm</h1>
                 </div>
                 
-                <div class="mb-3 createProductForm__name">
+                <div class="mb-5 createProductForm__name">
                     <label for="product-name">Tên sản phẩm</label>
                     <input type="text" class="form-control" name="name" id="product-name" placeholder="Áo khoác...">
                 </div>
 
-                <div class="mb-3 createProductForm__sku">
+                <div class="mb-5 createProductForm__sku">
                     <label for="product-sku">Mã sản phẩm</label>
                     <input type="text" class="form-control" name="sku" id="product-sku" placeholder="AOKHOAC123...">
                 </div>
-
-                <div class="mb-3 createProductForm__description">
+                
+                <div class="mb-5 createProductForm__description">
                     <label for="product-description">Mô tả</label>
                     <input type="text" class="form-control" name="description" id="product-description" placeholder="Áo mặc mùa thu...">
                 </div>
 
-                <div class="dropdown createProductForm__categories mt-5 mb-5">
-                    <button class="btn btn-secondary dropdown-toggle btn-custom-medium" data-bs-toggle="dropdown" aria-expanded="false">
-                      Danh mục sản phẩm
-                    </button>
-                    <ul class="dropdown-menu">
-                      
-                    </ul>
+                <div class="mb-5 createProductForm__image">
+                    <label for="product-image">Ảnh đại diện</label>
+                    <input type="file" name="image" accept="image/png, image/gif, image/jpeg" id="product-image">
                 </div>
 
-                <div class="mb-3 createProductForm__size">
+                <div class="mb-5 createProductForm__images">
+                    <label for="product-images">Danh mục ảnh</label>
+                    <input type="file" name="images" accept="image/png, image/gif, image/jpeg" id="product-images" multiple>
+                </div>
+
+                <div class="dropdown createProductForm__categories mt-5 mb-5 d-flex align-items-center">
+                    <div>
+                        <button class="btn btn-secondary dropdown-toggle btn-custom-medium" data-bs-toggle="dropdown" aria-expanded="false">
+                            Danh mục sản phẩm
+                        </button>
+                        <ul class="dropdown-menu"></ul>
+                    </div>
+                    <div id="selected-category" class="d-flex justify-content-between" style="margin-left: 24px; min-width: 80px;">
+                        <div id="selected-category-id"></div>
+                        <div id="selected-category-name"></div>
+                    </div>
+                </div>
+
+                <div class="mb-5 createProductForm__size">
                     <label for="product-size">Kích thước (Size)</label>
                     <form class="d-flex">
                         <input type="text" class="form-control" name="size" id="product-size" placeholder="S (140-150cm, 45-50kg)">
@@ -82,18 +96,18 @@
                     </ul>
                 </div>
 
-                <div class="mb-4 createProductForm__unit">
+                <div class="mb-5 createProductForm__unit">
                     <label for="product-unit">Đơn vị sản phẩm</label>
                     <select class="form-select" id="product-unit" style="padding: 4px 8px;">
-                        <option value="1">Cái</option>
-                        <option value="2">Bộ</option>
-                        <option value="3">Chiếc</option>
-                        <option value="4">Đôi</option>
-                        <option value="5">Hộp</option>
+                        <option value="Cái">Cái</option>
+                        <option value="Bộ">Bộ</option>
+                        <option value="Chiếc">Chiếc</option>
+                        <option value="Đôi">Đôi</option>
+                        <option value="Hộp">Hộp</option>
                     </select>
                 </div>
 
-                <div class="mb-3 d-flex justify-content-between">
+                <div class="mb-5 d-flex justify-content-between">
                     <div class="createProductForm__import-price">
                         <label for="product-import-price">Giá nhập</label>
                         <input type="text" class="form-control" name="import_price" id="product-import-price" placeholder="100000">
@@ -105,18 +119,32 @@
                     </div>
 
                     <div class="createProductForm__special-price">
-                        <label for="product-special-price">Giá bán</label>
+                        <label for="product-special-price">Giá khuyến mãi</label>
                         <input type="text" class="form-control" name="special_price" id="product-special-price" placeholder="130000">
                     </div>
+                </div>
+
+                <div class="mb-5 createProductForm__color d-flex align-items-center">
+                    <div>
+                        <label for="product-special-price">Màu</label>
+                        <form>
+                            <div style="max-width: 100px;">
+                                <input type="color" class="form-control" name="color-code" id="product-color-code">
+                                <input type="text" class="form-control" name="color-name" id="product-color-name" placeholder="Màu be...">
+                            </div>
+                            <button class="btn btn-dark btn-custom-small" id="add-color-btn">Thêm</button>
+                        </form>
+                    </div>
+                    <ul class="product-color-list mt-3"></ul>
                 </div>
 
             </div>
             <!-- CREATE PRODUCT FORM -->
 
+            <button id="create-product-btn" class="btn btn-dark btn-custom-medium">Tạo sản phẩm</button>
         </div>
-        <!-- CONTENT -->
 
-        <div id="footer">
+        <div id="footer" style="margin: 50px 0">
         </div>
     </div>
 
